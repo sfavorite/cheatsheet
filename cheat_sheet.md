@@ -6,17 +6,19 @@
 ## Git
 
 Start a repository
-    git init
-    git add --all
-    git commit -m 'Initial Commit'
-    git remote add github git@github.com:sfavorite/stuff.git
-
+```
+git init
+git add --all
+git commit -m 'Initial Commit'
+git remote add github git@github.com:sfavorite/stuff.git
+git push github master
+```
 
 To view remotes
+```
+git remote -v
+```
 
-    git remote -v
-
-    
 ## Github
 
 
@@ -30,9 +32,9 @@ To view remotes
 ## Composer
 
 To search for a package with composer
-
-    composer search debugbar
-
+```
+composer search debugbar
+```
 ## Repositories
 
 General PHP
