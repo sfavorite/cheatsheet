@@ -35,9 +35,20 @@ To search for a package with composer
 ```
 composer search debugbar
 ```
+
+Install a package with composer
+
+```
+composer require programmer/his-app
+composer require barryvdh/laravel-debugbar
+```
+
 ## Repositories
 
 General PHP
+
 https://packagist.org
+
 Laravel Specific
+
 https://packalyst.com
