@@ -42,6 +42,21 @@ Install a package with composer
 composer require programmer/his-app
 composer require barryvdh/laravel-debugbar
 ```
+You can now check composer.json and will see the new package is included.
+
+
+### Example using the new package
+
+When installing debugbar copy:
+Barryvdh\Debugbar\ServiceProvider::class,
+
+into the file **config/app.php** and in the section **'providers' => [**
+at the end paste the Barryvdh\Debugbar\ServiceProvider::class,
+
+Next create an alias 'Debugbar' => Barryvdh\Debugbar\Facade::class
+
+In the same app.php file in the section **'aliases' => [** add the line 'Debugbar' => Barryvdh\Debugbar\Facade::class
+
 
 ## Repositories
 
