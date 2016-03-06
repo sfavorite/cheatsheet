@@ -5,7 +5,18 @@
 
 ## Git
 
+Start a repository
+    git init
+    git add --all
+    git commit -m 'Initial Commit'
+    git remote add github git@github.com:sfavorite/stuff.git
 
+
+To view remotes
+
+    git remote -v
+
+    
 ## Github
 
 
