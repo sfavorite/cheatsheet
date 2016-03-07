@@ -1,6 +1,6 @@
 # DWA Cheat Sheet
 
-## Setup application
+## Setup Application
 
 
 ## Git
@@ -59,7 +59,7 @@ composer require barryvdh/laravel-debugbar
 ```
 You can now check composer.json and will see the new package is included.
 
-## Manually add package
+## Manually Add A Package
 
 In composer.json in "require" or "require-dev" if for development only manually add the package.
 
@@ -78,7 +78,17 @@ Now you must update composer.
 composer update
 ```
 
-### Example using the new package
+You can use '$random = new Rych\Random\Random()' add 'use \Rych\Random\Random' at the top of the routes.php file or create an alias in app.php to use Random
+
+Which option is best?
+* Using the class once
+    * Go with the full namespace $random = new Rych\Random\Random();
+* Using class multiple times in a single file
+    * Set use \Rych\Random\Random; at the top of the file.
+* Using the class multiple times throughout your application
+    * Create an alias
+    
+### Example Using The New Package
 
 When installing debugbar copy:
 Barryvdh\Debugbar\ServiceProvider::class,
@@ -90,6 +100,14 @@ Next create an alias 'Debugbar' => Barryvdh\Debugbar\Facade::class
 
 In the same app.php file in the section **'aliases' => [** add the line 'Debugbar' => Barryvdh\Debugbar\Facade::class
 
+## Create A Package alias
+
+In 'app.php' under 'aliases' => add
+
+```
+'Random' => 'Rych\Random\Random',
+```
+Notice that Rych\Random\Random is in single quotes. Since it is not a class you must put quotes around this line.
 
 ## Repositories
 
