@@ -70,7 +70,7 @@ In composer.json in "require" or "require-dev" if for development only manually 
     "barryvdh/laravel-debugbar": "^2.2",
     ***"rych/random": "dev-master"***
 },
-'''
+```
 
 Now you must update composer.
 
@@ -87,7 +87,7 @@ Which option is best?
     * Set use \Rych\Random\Random; at the top of the file.
 * Using the class multiple times throughout your application
     * Create an alias
-    
+
 ### Example Using The New Package
 
 When installing debugbar copy:
