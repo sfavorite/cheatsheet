@@ -2,9 +2,13 @@
 
 # DWA Cheat Sheet
 
+These notes assume you have knowledge or PHP, Laravel, & Git. I use these as
+refresher notes not detailed instructions.
+
 ## Create An Application
 
-Change to the directory you want the appliction to be under. So if you want /var/www/htdocs to be the parent directory.
+Change to the directory you want the appliction to be under. So if you want
+/var/www/htdocs to be the parent directory.
 
 ```
 cd /var/www/htdocs
@@ -13,9 +17,17 @@ composer create-project laravel/laravel myapplication --prefer-dist
 
 ## Rename APP
 
-To rename your app from...well app type
+To rename your app from...well 'app', change to the application root
+(i.g. /var/www/htdocs/p3).
 ```
 php artisan app:name myappname
+```
+
+## APP_KEY
+
+You may need/want to generate an APP_KEY for your environment file.
+```
+php artisan key:generate
 ```
 
 ## Git
@@ -67,10 +79,12 @@ Install a package with composer
 
 
 ```
-composer require programmer/his-app
+composer require programmer/his-cool-app
 composer require barryvdh/laravel-debugbar
 ```
 You can now check composer.json and will see the new package is included.
+
+
 
 ## Manually Add A Package
 
@@ -118,7 +132,9 @@ In the same app.php file in the section **'aliases' => [** add the line 'Debugba
 In 'app.php' under 'aliases' => add
 
 ```
+'Debugbar' => Barry\Debugbar\Facade::class,
 'Random' => 'Rych\Random\Random',
+
 ```
 Notice that Rych\Random\Random is in single quotes. Since it is not a class you must put quotes around this line.
 
@@ -152,3 +168,61 @@ public function getShow($title) {
 Now you need a blade.php file. Go to resources->views and create a directory. In this example we use **books**.
 
 Next we need a file. Since we are looking for a view named 'books.show' (see above) we have the first part books (Laravel will look in the directory books) we create a file called 'show.blade.php'. Laravel will automatically look in the resources->views directory.
+
+
+# Custom configuration of Packages
+
+Create a copy config in app/config
+```
+php artisan vendor:publish
+```
+
+Add to .env
+
+DEBUGBAR_ENABLED = True
+
+
+# Create a migration using artisan
+
+```bash
+$ php artisan make:migration create_books_table
+```
+
+# Run migrations
+
+```bash
+$ php artisan migrate
+```
+
+# Start Fresh on DB
+
+This will reset and re-run your migrations...giving you a clean DB.
+It will do all the down methods and then all the up methods.
+
+```bash
+$ php artisan migrate:refresh
+```
+
+# Do all migration downs
+
+```bash
+$ php artisan migrate:rollback
+```
+
+# Seeders
+First create a seed table file.
+
+```bash
+php artisan make:seeder BooksTableSeeder
+```
+Now fill out the BooksTableSeeder.php file under database\seeds
+To populate the database run.
+```bash
+php artisan db:seed
+```
+
+## Roll back and re-run migartions with seeds
+
+```bash
+php artisan migrate:refresh --seed
+```
