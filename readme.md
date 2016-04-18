@@ -343,3 +343,9 @@ In the controller (or route.php)
       return "Can't delete - Book not found.";
     }
 ```
+
+## Authentication
+
+```php
+php artisan make:auth
+```
