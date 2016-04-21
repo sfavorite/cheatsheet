@@ -5,7 +5,7 @@
 These notes assume you have knowledge or PHP, Laravel, & Git. I use these as
 refresher notes not detailed instructions.
 
-## Create An Application
+## Create a Laravel Application
 
 Change to the directory you want the appliction to be under. So if you want
 /var/www/htdocs to be the parent directory.
@@ -13,6 +13,17 @@ Change to the directory you want the appliction to be under. So if you want
 ```
 cd /var/www/htdocs
 composer create-project laravel/laravel myapplication --prefer-dist
+```
+
+## Permissions
+
+You may have to change the remote server permissions. I have not had to do this step.
+
+Make the user www-data own the storage directory and all sub-directories and files
+```bash
+cd /var/www/htdocs/newapp
+sudo chown -R www-data storage
+sudo chown -R www-data bootstrap/cache
 ```
 
 ## Rename APP
@@ -45,9 +56,6 @@ To view remotes
 ```
 git remote -v
 ```
-
-## Github
-
 
 
 # Packages
