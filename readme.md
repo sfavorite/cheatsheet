@@ -386,7 +386,7 @@ When defining the child side we use 'belongsTo', 'belongsToMany', 'etc'.
 
 So if you have two tables authors and books the authors table will need a 'hasMany' and the Book model will need a belongsTo.
 
-1) In the Parent (Author Model)
+1) In the Parent (Author Model)*
 
 ```php
     public function book() {
@@ -394,10 +394,12 @@ So if you have two tables authors and books the authors table will need a 'hasMa
     }
 ```
 
-2) In the Child (Book Model)
+2) In the Child (Book Model)*
 
 ```php
     public function author() {
         return $this->belongsTo('\Foobooks\Author');
     }
 ```
+
+N.B: In a many to many both sides use belongsToMany.
