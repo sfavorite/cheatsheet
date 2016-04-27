@@ -354,6 +354,40 @@ In the controller (or route.php)
 
 ## Authentication
 
+You can have artisan do setup the authentication framework or manually do it by putting routes for login/register in your routes.php file and then having blades in \resources\views\auth (login.blade.php) & (register.blade.php) - I like the manual method best but if you want the automated version:
+
 ```php
 php artisan make:auth
+```
+
+## Database
+
+### Quick note
+
+When making a Model with table relationships we need to define both sides of the relationship with one table being the parent the other the child. In the authors/books model the author is the parent and the book is the child.
+
+There are two steps in the Laravel framework to create databases & relationships: setup the foreign keys in the migrations and establish the relationship in the Model .
+
+1) In the migration you set the column and the foreign key it points to.
+
+Create a column to hold the key in the child table.
+$table->integer('author_id')->unsigned();
+Associate the new column, author_id, to the id in the authors table.
+$table->foreign('author_id')->references('id')->on('authors');
+
+2) In the Model set the parent child relationship so queries are executed correctly.
+
+When defining models in Laravel the parent side is listed as 'hasOne', 'hasMany' is the 'parent' side of the relationship.
+
+So if you have two tables authors and books the authors table will need a 'hasMany' and the Book model will need a belongsTo.
+
+
+
+This section repeats some of the above when it comes to migrations/seeds but it also shows all the steps from the beginning to setup a many to many relationship.
+
+### Step 1
+Create a migration table.
+
+```php
+php artisan make:migration create_answers_table
 ```
