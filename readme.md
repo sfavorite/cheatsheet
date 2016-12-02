@@ -440,3 +440,15 @@ To minify CSS & JavaScript
 ```bash
 $ ./node_modules/.bin/gulp --production
 ```
+
+# Vue.js
+
+I had to put the #app element in the load event handler.  
+
+```javascript
+window.addEventListener('load', function() {
+    const app = new Vue({
+        el: '#app'
+    });
+})
+```
