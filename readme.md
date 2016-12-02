@@ -403,3 +403,40 @@ So if you have two tables authors and books the authors table will need a 'hasMa
 ```
 
 N.B: In a many to many both sides use belongsToMany.
+
+# Using a pre-processor (Gulp)
+
+This example uses Gulp and Laravel Elixir.
+
+## Install Gulp (I only install locally)
+
+```bash
+$ npm install gulp --save-dev
+```
+
+## Install Laravel Elixir  
+There is a package.json in the root of Laravel directory structure with defaults for Elixir and Webpack. Doing an npm install
+will install those.
+
+```bash
+$ npm install
+```
+
+## Run Gulp
+
+Since Gulp is installed only to the application directory you need to point to the directory.
+
+```bash
+$ .node_modules/.bin/gulp
+```
+
+to have Gulp watch
+
+```bash
+$ ./node_modules/.bin/gulp watch
+```
+
+To minify CSS & JavaScript
+```bash
+$ ./node_modules/.bin/gulp --production
+```
