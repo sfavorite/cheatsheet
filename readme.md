@@ -15,6 +15,18 @@ cd /var/www/htdocs
 composer create-project laravel/laravel myapplication --prefer-dist
 ```
 
+N.B.
+
+I don't do the above to create projects any more, I currently do the following.
+
+$ composer global require "laravel/installer"
+
+Add ~/.composer/vendor/bin/laravel to your path (sorry this is OS specific)
+
+To create a new laravel app.
+
+$ laravel new 'app_directory'
+
 ## Permissions
 
 You may have to change the remote server permissions. I have not had to do this step.
