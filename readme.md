@@ -208,6 +208,12 @@ DEBUGBAR_ENABLED = True
 $ php artisan make:migration create_books_table
 ```
 
+You can also add the --create flag to your migration which will add the table to your
+migration for you.
+
+```bash
+$ php artisan make:migration create_books_table --create=books
+
 # Run migrations
 
 ```bash
