@@ -209,10 +209,17 @@ $ php artisan make:migration create_books_table
 ```
 
 You can also add the --create flag to your migration which will add the table to your
-migration for you.
+migration for you. This should only be done with a new table
 
 ```bash
 $ php artisan make:migration create_books_table --create=books
+```
+
+For an existing table that you want to modify you can use the --table flag.
+
+```bash
+$ php aritsan make:migration add_category_id_to_books --table=books
+```
 
 # Run migrations
 
