@@ -69,7 +69,6 @@ To view remotes
 git remote -v
 ```
 
-
 # Packages
 
 ## Updating vs Installing
@@ -168,6 +167,20 @@ Laravel Specific
 
 https://packalyst.com
 
+# Controllers
+
+To create a basic controller using artisan:
+
+```bash
+$ php artisan make:controller MyNewController
+```
+
+If you want the controller to have all of the CRUD verb (index, update, create, store, etc...) add the --resource flag to the end.
+
+To create a CRUD contoller
+```bash
+$ php artisan make:controller MyNewController --resource
+```
 
 # Views and Blades
 
