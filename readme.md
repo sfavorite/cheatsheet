@@ -490,3 +490,34 @@ window.addEventListener('load', function() {
     });
 })
 ```
+
+# Using Tinker
+
+Run tinker
+
+```bash
+$ php artisan tinker
+```
+
+## Create a 'user'
+
+```tinker
+>>> factory(App\User::class)->create()
+```
+
+Output
+```
+=> App\User {#722
+     name: "Maxine Kunze",
+     email: "gbauch@example.net",
+     updated_at: "2017-06-28 12:02:31",
+     created_at: "2017-06-28 12:02:31",
+     id: 2,
+   }
+```
+
+## Working with the user
+
+```tinker
+>>> App\User::find(2)
+```
