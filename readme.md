@@ -516,6 +516,12 @@ Output
    }
 ```
 
+Create a 100 users
+```tinker
+>>> factory('App\User', 100)->create()
+```
+
+
 ## Working with the user
 
 ```tinker
