@@ -255,6 +255,12 @@ $ php artisan migrate:refresh
 $ php artisan migrate:rollback
 ```
 
+# Rollback The Last Migration Operation (all migrations ran in the last batch)
+
+```bash
+php artisan migrate:rollback
+```
+
 # Seeders
 First create a seed table file.
 
