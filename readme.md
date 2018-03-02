@@ -1,5 +1,3 @@
-
-
 # DWA Cheat Sheet
 
 These notes assume you have knowledge or PHP, Laravel, & Git. I use these as
