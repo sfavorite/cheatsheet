@@ -67,6 +67,28 @@ To view remotes
 git remote -v
 ```
 
+Development vs Production
+
+Create the project locally then push to github
+
+Development server
+```
+git remote add github git@github.com:sfavorite/your_project.github
+git push github master
+```
+
+Pull changes from github to your local and then do a composer update
+```
+git remote add github git@github.com:sfavorite/your_project.github
+git pull github master
+```
+and do updates with
+```
+sudo git pull origin master
+composer install 
+```
+
+
 # Packages
 
 ## Updating vs Installing
