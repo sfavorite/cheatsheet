@@ -85,7 +85,7 @@ git pull github master
 and do updates with
 ```
 sudo git pull origin master
-composer install 
+composer install
 ```
 
 
@@ -186,6 +186,14 @@ https://packagist.org
 Laravel Specific
 
 https://packalyst.com
+
+# Javascript
+
+Use yarn as your javascript package manager. To install vue-router with yarn
+```bash
+$ yarn install
+$ yarn add vue-router
+``` 
 
 # Controllers
 
