@@ -69,21 +69,18 @@ git remote -v
 
 ### Development vs Production
 
+Best practice is to develop only on your...well development server. Push changes to
+github, or your local git server, and pull from that server to your production server.
+
 Create the project locally then push to github
 
-```bash
-$ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
-```
+### Push to github
 
-### Development server
 ```bash
-git remote add github git@github.com:sfavorite/your_project.github
 git push github master
 ```
 
-### Clone from github to your product
-
-# Pull changes from github to your local and then do a composer update
+### Pull changes from github to your local and then do a composer update
 ```
 git remote add github git@github.com:sfavorite/your_project.github
 git pull github master
