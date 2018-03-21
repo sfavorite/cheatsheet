@@ -67,17 +67,23 @@ To view remotes
 git remote -v
 ```
 
-Development vs Production
+### Development vs Production
 
 Create the project locally then push to github
 
-Development server
+```bash
+$ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
 ```
+
+### Development server
+```bash
 git remote add github git@github.com:sfavorite/your_project.github
 git push github master
 ```
 
-Pull changes from github to your local and then do a composer update
+### Clone from github to your product
+
+# Pull changes from github to your local and then do a composer update
 ```
 git remote add github git@github.com:sfavorite/your_project.github
 git pull github master
@@ -193,7 +199,7 @@ Use yarn as your javascript package manager. To install vue-router with yarn
 ```bash
 $ yarn install
 $ yarn add vue-router
-``` 
+```
 
 # Controllers
 
