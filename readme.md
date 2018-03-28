@@ -356,7 +356,7 @@ DB::table('books')->insert([
 
 ### Run native SQL commands
 ```php
-    $books = DB::select('SELECT * FROM books where author LIKE '%Scott%');
+    $books = DB::select('SELECT * FROM books where author LIKE '%Scott%'');
 ```
 
 ## Models and Eloquent ORM
