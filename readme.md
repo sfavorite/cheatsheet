@@ -573,7 +573,7 @@ Laravel Mix helps to take the pain out of webpack. Note that Laravel Mix needs t
 
 webpack.mix.js - the configuration file for laravel mix
 webpack.config.js - configuration file for webpack. This file is stored in node_modules -> laravel-mix -> setup. This file normally won't need to be changed.
-package.json - scripts
+package.json - scripts are placed in the...well scripts section.
 
 ## Some configuration options
 
@@ -584,3 +584,19 @@ mix.js(['resources/assets/js/app.js', 'resources/assets/js/forum.js'], 'public/j
     .js('resources/assets/js/shared_state.js', 'public/js')
    .sass('resources/assets/sass/app.scss', 'public/css').sourceMaps()
    .version(); // Add versioning to the files
+
+## Running
+
+To run once and created non-minified javascript files
+```bash
+$ npm run dev
+```
+
+To run and watch for changes, recompiling your js/css files
+```bash
+$ npm run watch
+```
+To run for production (minified code created)
+```bash
+$ npm run prod
+```
