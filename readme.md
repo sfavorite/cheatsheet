@@ -67,22 +67,46 @@ To view remotes
 git remote -v
 ```
 
-### Development vs Production
+## Development vs Production
 
 Best practice is to develop only on your...well development server. Push changes to
 github, or your local git server, and pull from that server to your production server.
 
 Create the project locally then push to github
 
-### Push to github
+### Development Server
+#### Push to github
+
+Copy your local/development copy to the git server of your choice.
 
 ```bash
 git push github master
 ```
 
-### Pull changes from github to your local and then do a composer update
+### Production Server
+
+Clone the repository to your production server using one of the methods below.
+
+#### Private Repositories without ssh key (via https)
+```bash
+sudo git clone https://yourname:yourpassword@github.com/sfavorite/personal
 ```
-git remote add github git@github.com:sfavorite/your_project.github
+
+#### Public Repositories without ssh key (via https)
+```bash
+sudo git clone https://github.com/sfavorite/personal
+```
+
+#### Repositories with ssh key (public or private via ssh)
+```bash
+sudo git clone git@github.com/sfavorite/personal
+```
+
+Once you have the repository on your production server
+
+#### Pull changes from github to your local and then do a composer update
+```
+git remote add github git@github.com:sfavorite/your_project
 git pull github master
 ```
 and do updates with
