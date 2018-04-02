@@ -564,3 +564,23 @@ Create a 100 users
 ```tinker
 >>> App\User::find(2)
 ```
+
+# Laravel Mix
+
+Laravel Mix helps to take the pain out of webpack. Note that Laravel Mix needs to be run with npm not yarn.
+
+## Files
+
+webpack.mix.js - the configuration file for laravel mix
+webpack.config.js - configuration file for webpack. This file is stored in node_modules -> laravel-mix -> setup. This file normally won't need to be changed.
+package.json - scripts
+
+## Some configuration options
+
+Files placed in an array will be compiled to on file. Adding .extract will put vendor files into vendor.js
+Create source maps with .sourceMaps()
+
+mix.js(['resources/assets/js/app.js', 'resources/assets/js/forum.js'], 'public/js').extract(['vue', 'axios', 'jquery', 'bootstrap'])
+    .js('resources/assets/js/shared_state.js', 'public/js')
+   .sass('resources/assets/sass/app.scss', 'public/css').sourceMaps()
+   .version(); // Add versioning to the files
