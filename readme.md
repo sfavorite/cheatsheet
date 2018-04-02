@@ -589,6 +589,7 @@ mix.js(['resources/assets/js/app.js', 'resources/assets/js/forum.js'], 'public/j
 
 To run once and created non-minified javascript files
 ```bash
+// Run all Mix tasks...
 $ npm run dev
 ```
 
@@ -598,5 +599,6 @@ $ npm run watch
 ```
 To run for production (minified code created)
 ```bash
+// Run all Mix tasks and minify output...
 $ npm run prod
 ```
