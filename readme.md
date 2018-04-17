@@ -598,3 +598,27 @@ To run for production (minified code created)
 // Run all Mix tasks and minify output...
 $ npm run prod
 ```
+
+# Custom validation
+
+To make custom validation rules like alpha and spaces.
+
+To AppServiceProvider.php add the line
+
+```
+use Illuminate\Support\Facades\Validator;
+```
+
+To the boot parameter add your custom validator
+
+```
+public function boot()
+{
+    //Add this custom validation rule.
+    Validator::extend('alpha_spaces', function ($attribute, $value, $parameters, $validator) {
+        // This will only accept alpha and spaces.
+        // If you want to accept hyphens use: /^[\pL\s-]+$/u.
+        return preg_match('/^[\pL\s]+$/u', $value);
+    });
+}
+```
