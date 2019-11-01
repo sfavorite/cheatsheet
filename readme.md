@@ -451,12 +451,19 @@ In the controller (or route.php)
     }
 ```
 
-## Authentication
+## Authentication (Laravel 6)
 
 You can have artisan do setup the authentication framework or manually do it by putting routes for login/register in your routes.php file and then having blades in \resources\views\auth (login.blade.php) & (register.blade.php) - I like the manual method best but if you want the automated version:
 
-```php
-php artisan make:auth
+To create the scaffolding
+```bash
+composer require laravel/ui --dev
+
+```
+
+To create the views
+```bash
+php artisan ui vue --auth
 ```
 
 ## Database
@@ -621,4 +628,18 @@ public function boot()
         return preg_match('/^[\pL\s]+$/u', $value);
     });
 }
+```
+
+In validation.php add an error message to match your new validation
+
+```
+'alpha_spaces'         => 'The :attribute may only contain letters and spaces.',
+```    
+
+Add your shiny new validation to a controller.
+
+```
+$validated = Validator::make($request->all(), [
+    'key' => 'alpha_spaces|Required',
+]);
 ```
